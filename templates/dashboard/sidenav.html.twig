@@ -6,7 +6,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
-        <a class="navbar-brand pt-0" href="{{ path(/dashboard/home) }}">
+        <a class="navbar-brand pt-0" href="{{ path('dashboard') }}">
             <img src="{{ asset('img/brand/netvisor.png')}}" class="navbar-brand-img" alt="...">
         </a>
         <!-- User -->
@@ -39,12 +39,12 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('dashboard/home') }}">
+                    <a class="nav-link" href="{{ path('dashboard') }}">
                         <i class="ni ni-tv-2 text-primary"></i> Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('dashboard/opened_issues') }}">
+                    <a class="nav-link" href="{{ path('opened_issues') }}">
                         <i class="ni ni-planet text-blue"></i> Opened Issues
                     </a>
                 </li>
@@ -56,22 +56,22 @@
             <!-- Navigation -->
             <ul class="navbar-nav mb-md-3">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('dashboard/users') }}">
+                    <a class="nav-link" href="{{ path('users') }}">
                         <i class="ni ni-spaceship"></i> Users
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('dashboard/locations') }}">
+                    <a class="nav-link" href="{{ path('locations') }}">
                         <i class="ni ni-world"></i> Locations
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('dashboard/devices') }}">
+                    <a class="nav-link" href="{{ path('devices') }}">
                         <i class="ni ni-ui-04"></i> Devices
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('dashboard/entities') }}">
+                    <a class="nav-link" href="#">
                         <i class="ni ni-ui-04"></i> Entities
                     </a>
                 </li>

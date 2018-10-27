@@ -13,3 +13,7 @@ devices:
 locations:
   path: /dashboard/locations
   controller: App\Controller\DashboardController::locations
+
+opened_issues:
+  path: /dashboard/opened_issues
+  controller: App\Controller\DashboardController::opened_issues

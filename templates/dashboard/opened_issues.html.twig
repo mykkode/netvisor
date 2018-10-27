@@ -1,0 +1,186 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %} {% include "stylesheets.html.twig" %} {% endblock %}
+
+
+{% block content %}
+
+    {% include "dashboard/sidenav.html.twig" %}
+
+<!-- Main content -->
+<div class="main-content">
+
+    {% include "dashboard/topnav.html.twig" %}
+
+    <!-- Header -->
+    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+
+    </div>
+
+    <!-- Page content -->
+    <div class="container-fluid mt--9">
+        <div class="row mt-5">
+            <div class="col-12 mb-5 mb-xl-0">
+                <div class="card shadow">
+                    <div class="card-header border-0">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h3 class="mb-0">Issues</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <!-- Projects table -->
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Device</th>
+                                <th scope="col">Location</th>
+                                <th scope="col">Reports</th>
+                                <th scope="col">Assinged To / status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">
+                                    Water Dispenser
+                                </th>
+                                <td>
+                                    Main Lobby
+                                </td>
+                                <td>
+                                    38
+                                </td>
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        <i class="bg-warning"></i> no one pending
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    Water Dispenser
+                                </th>
+                                <td>
+                                    Main Lobby
+                                </td>
+                                <td>
+                                    38
+                                </td>
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        <i class="bg-warning"></i> no one pending
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    Water Dispenser
+                                </th>
+                                <td>
+                                    Main Lobby
+                                </td>
+                                <td>
+                                    38
+                                </td>
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        <i class="bg-warning"></i> no one pending
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    Water Dispenser
+                                </th>
+                                <td>
+                                    Main Lobby
+                                </td>
+                                <td>
+                                    38
+                                </td>
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        <i class="bg-warning"></i> no one pending
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    Water Dispenser
+                                </th>
+                                <td>
+                                    Main Lobby
+                                </td>
+                                <td>
+                                    38
+                                </td>
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        <i class="bg-warning"></i> no one pending
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    Water Dispenser
+                                </th>
+                                <td>
+                                    Programming Hub
+                                </td>
+                                <td>
+                                    20
+                                </td>
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        <i class="bg-warning"></i> no one pending
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    Woman Toilets
+                                </th>
+                                <td>
+                                    Toilets
+                                </td>
+                                <td>
+                                    3
+                                </td>
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        <i class="bg-primary"></i> Alina - working
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    Air Conditioning
+                                </th>
+                                <td>
+                                    Building A
+                                </td>
+                                <td>
+                                    10
+                                </td>
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        <i class="bg-primary"></i> Gigel - working
+                                    </span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include "footer.html.twig" %}
+
+    </div>
+</div>
+
+    {% include "dashboard/javascripts.html.twig" %}
+
+{% endblock %}

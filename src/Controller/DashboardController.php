@@ -28,4 +28,9 @@ class DashboardController extends AbstractController
     {
         return $this->render('dashboard/locations.html.twig');
     }
+
+    public function opened_issues(): Response
+    {
+        return $this->render('dashboard/opened_issues.html.twig');
+    }
 }

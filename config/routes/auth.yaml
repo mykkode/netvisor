@@ -1,0 +1,3 @@
+index:
+    path: /auth/login
+    controller: App\Controller\AuthController::index

@@ -23,4 +23,9 @@ class DashboardController extends AbstractController
     {
         return $this->render('dashboard/devices.html.twig');
     }
+
+    public function locations(): Response
+    {
+        return $this->render('dashboard/locations.html.twig');
+    }
 }

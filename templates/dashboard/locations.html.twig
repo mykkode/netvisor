@@ -1,0 +1,148 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %} {% include "stylesheets.html.twig" %} {% endblock %}
+
+{% block content %}
+
+    {% include "dashboard/sidenav.html.twig" %}
+
+    <!-- Main content -->
+    <div class="main-content">
+
+        {% include "dashboard/topnav.html.twig" %}
+        <!-- Header -->
+        <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+
+        </div>
+
+        <!-- Page content -->
+        <div class="container-fluid mt--9">
+            <div class="row mt-5">
+                <div class="col-12 mb-5 mb-xl-0">
+                    <div class="card shadow">
+                        <div class="card-header border-0">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h3 class="mb-0">Locations</h3>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Add Location
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Button trigger modal -->
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Add Location</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form role="form">
+                                            <div class="form-group mb-3">
+                                                <div class="input-group input-group-alternative">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="ni ni-world-2"></i></span>
+                                                    </div>
+                                                    <input class="form-control" placeholder="Location Name" type="email">
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary my-4">Add</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <!-- Projects table -->
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Opened issues</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        1
+                                    </th>
+                                    <td>
+                                        Toilets
+                                    </td>
+                                    <td>
+                                        4
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning" data-dismiss="modal">X</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        2
+                                    </th>
+                                    <td>
+                                        Lobby
+                                    </td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning" data-dismiss="modal">X</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        3
+                                    </th>
+                                    <td>
+                                        Programming hub
+                                    </td>
+                                    <td>
+                                        10
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning" data-dismiss="modal">X</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        4
+                                    </th>
+                                    <td>
+                                        Front Exit
+                                    </td>
+                                    <td>
+                                        0
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning" data-dismiss="modal">X</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% include "footer.html.twig" %}
+
+        </div>
+    </div>
+
+    {% include "dashboard/javascripts.html.twig" %}
+
+{% endblock %}

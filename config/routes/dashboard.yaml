@@ -9,3 +9,7 @@ users:
 devices:
   path: /dashboard/devices
   controller: App\Controller\DashboardController::devices
+
+locations:
+  path: /dashboard/locations
+  controller: App\Controller\DashboardController::locations

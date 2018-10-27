@@ -23,7 +23,9 @@
                         <div class="card-header border-0">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <h3 class="mb-0">Locations</h3>
+                                    <h3 class="mb-0 d-inline">Locations
+                                        <i class="fa fa-spinner fa-spin" id="loading"></i>
+                                    </h3>
                                 </div>
                                 <div class="col-4 text-right">
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -74,63 +76,8 @@
                                     <th scope="col">Actions</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">
-                                        1
-                                    </th>
-                                    <td>
-                                        Toilets
-                                    </td>
-                                    <td>
-                                        4
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-warning" data-dismiss="modal">X</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        2
-                                    </th>
-                                    <td>
-                                        Lobby
-                                    </td>
-                                    <td>
-                                        3
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-warning" data-dismiss="modal">X</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        3
-                                    </th>
-                                    <td>
-                                        Programming hub
-                                    </td>
-                                    <td>
-                                        10
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-warning" data-dismiss="modal">X</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        4
-                                    </th>
-                                    <td>
-                                        Front Exit
-                                    </td>
-                                    <td>
-                                        0
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-warning" data-dismiss="modal">X</button>
-                                    </td>
-                                </tr>
+                                <tbody id="replaceThis">
+
                                 </tbody>
                             </table>
                         </div>
@@ -144,5 +91,6 @@
     </div>
 
     {% include "dashboard/javascripts.html.twig" %}
+    <script src="{{ asset('/js/users.js')}}"></script>
 
 {% endblock %}

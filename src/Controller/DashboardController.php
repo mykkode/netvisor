@@ -10,8 +10,8 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class DashboardController extends AbstractController
 {
-    public function index(): Response
+    public function home(): Response
     {
-        return new Response("merge");
+        return $this->render("dashboard/dashboard.html.twig");
     }
 }

@@ -5,3 +5,7 @@ login:
 logout:
     path: /auth/logout
     controller: App\Controller\AuthController::logout
+
+register:
+    path: /auth/register
+    controller: App\Controller\AuthController::register

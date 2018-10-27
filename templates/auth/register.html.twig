@@ -1,0 +1,87 @@
+{% extends "base.html.twig" %}
+
+{% block bodyClass %}bg-default{% endblock %}
+
+{% block content %}
+
+    <div class="main-content">
+
+        {% include "auth/header.html.twig" %}
+
+        <!-- Page content -->
+        <div class="container mt--8 pb-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-7">
+                    <div class="card bg-secondary shadow border-0">
+                        <div class="card-header bg-transparent">
+                            <div class="row">
+                                <div class="col-6 d-flex align-items-center">
+                                    <div class="">
+                                        <img class="w-100 h-auto  " src="{{ asset("img/brand/company.png") }}" / >
+                                    </div>
+                                </div>
+                                <div class="col-6 d-flex align-items-center">
+                                    <div class="">
+                                        <img class="w-100 h-auto " src="{{ asset("img/brand/netvisor.png") }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body  pt-0">
+                            <div class="text-center text-muted">
+                                <small>Create an account, it's as simple as it gets</small>
+                            </div>
+                            <form role="form">
+                                <div class="form-group">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Name" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Email" type="email">
+                                    </div>
+                                    <div class="text-muted font-italic"><small>Accepted emails: <span class="text-success font-weight-700">@netvisor.company</span></small></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Password" type="password">
+                                    </div>
+                                </div>
+                                <div class="custom-control custom-control-alternative custom-checkbox">
+                                    <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
+                                    <label class="custom-control-label" for=" customCheckLogin">
+                                        <span class="text-muted">I agree GDPR and internal policies!</span>
+                                    </label>
+                                </div>
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-primary my-4">Sign up</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 text-center">
+                            <a href="#" class="text-light"><small>Sign in with existing account!</small></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include "footer.html.twig" %}
+
+        {% include "auth/javascripts.html.twig" %}
+
+    </div>
+
+{% endblock %}

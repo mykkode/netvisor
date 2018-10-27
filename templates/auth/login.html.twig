@@ -4,74 +4,100 @@
 
 {% block content %}
     <div class="main-content">
-    {% include "auth/header.html.twig" %}
+        {% include "auth/header.html.twig" %}
 
-    <!-- Page content -->
-    <div class="container mt--8 pb-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-5 col-md-7">
-                <div class="card bg-secondary shadow border-0">
-                    <div class="card-header bg-transparent">
-                        <div class="row">
-                            <div class="col-6 d-flex align-items-center">
-                                <div class="">
-                                    <img class="w-100 h-auto  " src="{{ asset("img/brand/company.png") }}" / >
+        <!-- Page content -->
+        <div class="container mt--8 pb-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-7">
+                    <div class="card bg-secondary shadow border-0">
+                        <div class="card-header bg-transparent">
+                            <div class="row">
+                                <div class="col-6 d-flex align-items-center">
+                                    <div class="">
+                                        <img class="w-100 h-auto  " src="{{ asset("img/brand/company.png") }}" / >
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-6 d-flex align-items-center">
-                                <div class="">
-                                    <img class="w-100 h-auto " src="{{ asset("img/brand/netvisor.png") }}">
+                                <div class="col-6 d-flex align-items-center">
+                                    <div class="">
+                                        <img class="w-100 h-auto " src="{{ asset("img/brand/netvisor.png") }}">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card-body px-lg-5 pb-lg-5 pt-0">
-                        <div class="text-center text-muted mb-4">
-                            <small>Sign in with your credentials :)</small>
+                        <div class="card-body px-lg-5 pb-lg-5 pt-0">
+                            <div class="text-center text-muted mb-4">
+                                <small>Sign in with your credentials :)</small>
+                            </div>
+                            <form role="form" method="post">
+                                <div class="form-group mb-3">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Email" type="text" name="_username">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Password" type="password" name="_password">
+                                    </div>
+                                </div>
+                                <div class="custom-control custom-control-alternative custom-checkbox">
+                                    <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
+                                    <label class="custom-control-label" for=" customCheckLogin">
+                                        <span class="text-muted">Remember me</span>
+                                    </label>
+                                </div>
+                                <div class="text-center">
+                                    <input type="submit" class="btn btn-primary my-4" value="Sign In">
+                                </div>
+                            </form>
                         </div>
-                        <form role="form" method="post">
-                            <div class="form-group mb-3">
-                                <div class="input-group input-group-alternative">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                                    </div>
-                                    <input class="form-control" placeholder="Email" type="text" name="_username">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group input-group-alternative">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                    </div>
-                                    <input class="form-control" placeholder="Password" type="password" name="_password">
-                                </div>
-                            </div>
-                            <div class="custom-control custom-control-alternative custom-checkbox">
-                                <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
-                                <label class="custom-control-label" for=" customCheckLogin">
-                                    <span class="text-muted">Remember me</span>
-                                </label>
-                            </div>
-                            <div class="text-center">
-                                <input type="submit" class="btn btn-primary my-4" value="Sign In">
-                            </div>
-                        </form>
                     </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-6">
-                        <a href="#" class="text-light"><small>Forgot password?</small></a>
-                    </div>
-                    <div class="col-6 text-right">
-                        <a href="#" class="text-light"><small>Create new account</small></a>
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <a href="#" class="text-light"><small>Forgot password?</small></a>
+                        </div>
+                        <div class="col-6 text-right">
+                            <a href="#" class="text-light"><small>Create new account</small></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    {% include "footer.html.twig" %}
-    {% include "auth/javascripts.html.twig" %}
+        <!-- create js modal variable, which is used to trigger the modal for bad credentials -->
+        <script>var modal=false;</script>
 
+        {% if(error!=null) %}
+
+            <script>modal=true;</script>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Authentication error</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            {{ error.message }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% include "footer.html.twig" %}
+        {% include "auth/javascripts.html.twig" %}
+
+        <script src="{{ asset('/js/login.js') }}"></script>
     </div>
 {% endblock %}

@@ -12,6 +12,9 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class User implements UserInterface
 {
+    const ROLE_USER = 'ROLE_USER';
+    const ROLE_ADMIN = 'ROLE_ADMIN';
+
     /**
      * @var int
      * @ORM\Id
@@ -60,6 +63,11 @@ class User implements UserInterface
      * @ORM\Column(type="array")
      */
     private $roles;
+
+    public function __construct()
+    {
+        $this->roles = [self::ROLE_USER];
+    }
 
     /**
      * @return int

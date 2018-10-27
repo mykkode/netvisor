@@ -14,7 +14,7 @@
         {% include "dashboard/header.html.twig" %}
 
         <!-- Page content -->
-        <div class="container-fluid mt--7">
+        <div class="container-fluid mt--7 ">
             <div class="row">
                 <div class="col-12 mb-5 mb-xl-0">
                     <div class="card bg-gradient-default shadow">
@@ -52,13 +52,14 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row my-5">
                 <div class="col-12 mb-5 mb-xl-0">
                     <div class="card shadow">
                         <div class="card-header border-0">
                             <div class="row align-items-center">
-                                <div class="col">
-                                    <h3 class="mb-0">Latest Issues</h3>
+                                <div class="col d-block">
+                                    <h3 class="mb-0 mr-2 d-inline">Latest Issues </h3>
+                                    <i class="fa fa-spinner fa-spin" id="loading"></i>
                                 </div>
                             </div>
                         </div>
@@ -74,102 +75,7 @@
                                     <th scope="col">Assinged To / status</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">
-                                        1
-                                    </th>
-                                    <td>
-                                        Water Dispenser
-                                    </td>
-                                    <td>
-                                        Main Lobby
-                                    </td>
-                                    <td>
-                                        38
-                                    </td>
-                                    <td>
-                                    <span class="badge badge-dot mr-4">
-                                        <i class="bg-warning"></i> no one pending
-                                    </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        2
-                                    </th>
-                                    <td>
-                                        Water Dispenser
-                                    </td>
-                                    <td>
-                                        Programming Hub
-                                    </td>
-                                    <td>
-                                        20
-                                    </td>
-                                    <td>
-                                    <span class="badge badge-dot mr-4">
-                                        <i class="bg-warning"></i> no one pending
-                                    </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        3
-                                    </th>
-                                    <td>
-                                        Woman Toilets
-                                    </td>
-                                    <td>
-                                        Toilets
-                                    </td>
-                                    <td>
-                                        3
-                                    </td>
-                                    <td>
-                                    <span class="badge badge-dot mr-4">
-                                        <i class="bg-primary"></i> Alina - working
-                                    </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        4
-                                    </th>
-                                    <td>
-                                        Air Conditioner
-                                    </td>
-                                    <td>
-                                        Building A
-                                    </td>
-                                    <td>
-                                        10
-                                    </td>
-                                    <td>
-                                    <span class="badge badge-dot mr-4">
-                                        <i class="bg-primary"></i> Gigel - working
-                                    </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        5
-                                    </th>
-                                    <td>
-                                        Lights
-                                    </td>
-                                    <td>
-                                        Principal Office
-                                    </td>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                    <span class="badge badge-dot mr-4">
-                                        <i class="bg-success"></i> Alina - done
-                                    </span>
-                                    </td>
-                                </tr>
+                                <tbody id="replaceThis">
                                 </tbody>
                             </table>
                         </div>
@@ -183,5 +89,6 @@
     </div>
 
     {% include "dashboard/javascripts.html.twig" %}
+    <script src="{{ asset('/js/home.js')}}"></script>
 
 {% endblock %}

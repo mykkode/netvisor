@@ -17,3 +17,7 @@ locations:
 opened_issues:
   path: /dashboard/opened_issues
   controller: App\Controller\DashboardController::opened_issues
+
+entities:
+  path: /dashboard/entities
+  controller: App\Controller\DashboardController::entities

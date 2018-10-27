@@ -4,7 +4,6 @@
 
 {% block content %}
     <div class="main-content">
-    {% include "auth/navbar.html.twig" %}
     {% include "auth/header.html.twig" %}
 
     <!-- Page content -->
@@ -13,9 +12,18 @@
             <div class="col-lg-5 col-md-7">
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-header bg-transparent">
-                        <a class="" href="../index.html">
-                            <img class="w-50 d-block mx-auto" src="{{ asset('/img/brand/company.png') }}" / >
-                        </a>
+                        <div class="row">
+                            <div class="col-6 d-flex align-items-center">
+                                <div class="">
+                                    <img class="w-100 h-auto  " src="{{ asset("img/brand/company.png") }}" / >
+                                </div>
+                            </div>
+                            <div class="col-6 d-flex align-items-center">
+                                <div class="">
+                                    <img class="w-100 h-auto " src="{{ asset("img/brand/netvisor.png") }}">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body px-lg-5 py-lg-5">
                         <div class="text-center text-muted mb-4">

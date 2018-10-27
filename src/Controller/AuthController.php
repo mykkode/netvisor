@@ -12,11 +12,11 @@ class AuthController extends AbstractController
 {
     public function index(): Response
     {
-        return $this->render('login.html.twig');
+        return $this->render('auth/login.html.twig');
     }
     public function dashboard(): Response
     {
-        return $this->render('dashboard.html.twig');
+        return $this->render('dashboard/dashboard.html.twig');
     }
 
 }

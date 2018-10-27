@@ -1,13 +1,11 @@
 {% extends "base.html.twig" %}
 
-{% block stylesheets %} {% include "stylesheets.html.twig" %} {% endblock %}
-
 {% block bodyClass %}bg-default{% endblock %}
 
 {% block content %}
     <div class="main-content">
-    {% include "navbar.html.twig" %}
-    {% include "header.html.twig" %}
+    {% include "auth/navbar.html.twig" %}
+    {% include "auth/header.html.twig" %}
 
     <!-- Page content -->
     <div class="container mt--8 pb-5">
@@ -65,7 +63,7 @@
     </div>
 
     {% include "footer.html.twig" %}
-    {% include "javascripts.html.twig" %}
+    {% include "auth/javascripts.html.twig" %}
 
     </div>
 {% endblock %}

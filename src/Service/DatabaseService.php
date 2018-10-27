@@ -48,4 +48,40 @@ class DatabaseService
 
         return true;
     }
+
+    /**
+     * @param string $entityName
+     * @param int $id
+     *
+     * @return null|object
+     */
+    public function find(string $entityName, int $id)
+    {
+        return $this->doctrine->getRepository($entityName)->find($id);
+    }
+
+    /**
+ * @param string $entityName
+ * @param array $criteria
+ * @param array|null $orderBy
+ * @param null $limit
+ * @param null $offset
+ *
+ * @return array
+ */
+    public function findBy(string $entityName, array $criteria, ?array $orderBy = null, $limit = null, $offset = null): array
+    {
+        return $this->doctrine->getRepository($entityName)->findBy($criteria, $orderBy, $limit, $offset);
+    }
+
+    /**
+     * @param string $entityName
+     * @param array $criteria
+     *
+     * @return null|object
+     */
+    public function findOneBy(string $entityName, array $criteria)
+    {
+        return $this->doctrine->getRepository($entityName)->findOneBy($criteria);
+    }
 }

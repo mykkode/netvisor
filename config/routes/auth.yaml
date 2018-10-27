@@ -5,3 +5,8 @@ login:
 logout:
     path: /auth/logout
     controller: App\Controller\AuthController::logout
+
+check_credentials:
+    path: /auth/check-credentials
+#    methods: POST
+    controller: App\Controller\AuthController::checkCredentials

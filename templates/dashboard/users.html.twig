@@ -1,0 +1,214 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %} {% include "stylesheets.html.twig" %} {% endblock %}
+
+{% block content %}
+
+    {% include "dashboard/sidenav.html.twig" %}
+
+    <!-- Main content -->
+    <div class="main-content">
+
+        {% include "dashboard/topnav.html.twig" %}
+        <!-- Header -->
+        <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+
+        </div>
+
+        <!-- Page content -->
+        <div class="container-fluid mt--9">
+            <div class="row mt-5">
+                <div class="col-12 mb-5 mb-xl-0">
+                    <div class="card shadow">
+                        <div class="card-header border-0">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h3 class="mb-0">Users</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <!-- Projects table -->
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Position</th>
+                                    <th scope="col">On duty</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        1
+                                    </th>
+                                    <td>
+                                        John doe
+                                    </td>
+                                    <td>
+                                        Jennitor
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dot mr-4">
+                                            <i class="bg-primary"></i> On issue #123
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        2
+                                    </th>
+                                    <td>
+                                        John doe
+                                    </td>
+                                    <td>
+                                        Jennitor
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dot mr-4">
+                                            <i class="bg-primary"></i> On issue #123
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        3
+                                    </th>
+                                    <td>
+                                        John doe
+                                    </td>
+                                    <td>
+                                        Jennitor
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dot mr-4">
+                                            <i class="bg-primary"></i> On issue #123
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        4
+                                    </th>
+                                    <td>
+                                        John doe
+                                    </td>
+                                    <td>
+                                        Jennitor
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dot mr-4">
+                                            <i class="bg-primary"></i> On issue #123
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        5
+                                    </th>
+                                    <td>
+                                        John doe
+                                    </td>
+                                    <td>
+                                        Jennitor
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dot mr-4">
+                                            <i class="bg-primary"></i> On issue #123
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        6
+                                    </th>
+                                    <td>
+                                        John doe
+                                    </td>
+                                    <td>
+                                        Jennitor
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dot mr-4">
+                                            <i class="bg-primary"></i> On issue #123
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        7
+                                    </th>
+                                    <td>
+                                        John doe
+                                    </td>
+                                    <td>
+                                        Jennitor
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dot mr-4">
+                                            <i class="bg-warning"></i> no issue
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        8
+                                    </th>
+                                    <td>
+                                        John doe
+                                    </td>
+                                    <td>
+                                        Jennitor
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dot mr-4">
+                                            <i class="bg-warning"></i> no issue
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        9
+                                    </th>
+                                    <td>
+                                        John doe
+                                    </td>
+                                    <td>
+                                        Jennitor
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dot mr-4">
+                                            <i class="bg-warning"></i> no issue
+                                        </span>
+                                    </td>
+                                </tr>                            <tr>
+                                    <th scope="row">
+                                        10
+                                    </th>
+                                    <td>
+                                        John doe
+                                    </td>
+                                    <td>
+                                        Jennitor
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dot mr-4">
+                                            <i class="bg-warning"></i> no issue
+                                        </span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% include "footer.html.twig" %}
+        </div>
+    </div>
+
+    {% include "dashboard/javascripts.html.twig" %}
+
+{% endblock %}

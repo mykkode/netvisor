@@ -13,6 +13,5 @@ $.getJSON( "http://www.mocky.io/v2/5bd4b3f13200002a00a3be0e", function( data ) {
 response = $.parseJSON(response);
 
 $(function() {
-        console.log($tr.wrap('<p>').html());
-    });
+    console.log($tr.wrap('<p>').html());
 });

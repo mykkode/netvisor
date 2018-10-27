@@ -18,4 +18,9 @@ class DashboardController extends AbstractController
     {
         return $this->render('dashboard/users.html.twig');
     }
+
+    public function devices(): Response
+    {
+        return $this->render('dashboard/devices.html.twig');
+    }
 }

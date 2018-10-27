@@ -25,7 +25,9 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h3 class="mb-0">Issues</h3>
+                                <h3 class="mb-0 d-inline">Issues
+                                    <i class="fa fa-spinner fa-spin" id="loading"></i>
+                                </h3>
                             </div>
                         </div>
                     </div>
@@ -40,135 +42,8 @@
                                 <th scope="col">Assinged To / status</th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row">
-                                    Water Dispenser
-                                </th>
-                                <td>
-                                    Main Lobby
-                                </td>
-                                <td>
-                                    38
-                                </td>
-                                <td>
-                                    <span class="badge badge-dot mr-4">
-                                        <i class="bg-warning"></i> no one pending
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    Water Dispenser
-                                </th>
-                                <td>
-                                    Main Lobby
-                                </td>
-                                <td>
-                                    38
-                                </td>
-                                <td>
-                                    <span class="badge badge-dot mr-4">
-                                        <i class="bg-warning"></i> no one pending
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    Water Dispenser
-                                </th>
-                                <td>
-                                    Main Lobby
-                                </td>
-                                <td>
-                                    38
-                                </td>
-                                <td>
-                                    <span class="badge badge-dot mr-4">
-                                        <i class="bg-warning"></i> no one pending
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    Water Dispenser
-                                </th>
-                                <td>
-                                    Main Lobby
-                                </td>
-                                <td>
-                                    38
-                                </td>
-                                <td>
-                                    <span class="badge badge-dot mr-4">
-                                        <i class="bg-warning"></i> no one pending
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    Water Dispenser
-                                </th>
-                                <td>
-                                    Main Lobby
-                                </td>
-                                <td>
-                                    38
-                                </td>
-                                <td>
-                                    <span class="badge badge-dot mr-4">
-                                        <i class="bg-warning"></i> no one pending
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    Water Dispenser
-                                </th>
-                                <td>
-                                    Programming Hub
-                                </td>
-                                <td>
-                                    20
-                                </td>
-                                <td>
-                                    <span class="badge badge-dot mr-4">
-                                        <i class="bg-warning"></i> no one pending
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    Woman Toilets
-                                </th>
-                                <td>
-                                    Toilets
-                                </td>
-                                <td>
-                                    3
-                                </td>
-                                <td>
-                                    <span class="badge badge-dot mr-4">
-                                        <i class="bg-primary"></i> Alina - working
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    Air Conditioning
-                                </th>
-                                <td>
-                                    Building A
-                                </td>
-                                <td>
-                                    10
-                                </td>
-                                <td>
-                                    <span class="badge badge-dot mr-4">
-                                        <i class="bg-primary"></i> Gigel - working
-                                    </span>
-                                </td>
-                            </tr>
+                            <tbody id="replaceThis">
+
                             </tbody>
                         </table>
                     </div>
@@ -182,5 +57,6 @@
 </div>
 
     {% include "dashboard/javascripts.html.twig" %}
+    <script src="{{ asset('/js/opened_issues.js')}}"></script>
 
 {% endblock %}

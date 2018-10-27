@@ -33,4 +33,8 @@ class DashboardController extends AbstractController
     {
         return $this->render('dashboard/opened_issues.html.twig');
     }
+    public function entities(): Response
+    {
+        return $this->render('dashboard/entities.html.twig');
+    }
 }

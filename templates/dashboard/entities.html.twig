@@ -2,6 +2,7 @@
 
 {% block stylesheets %} {% include "stylesheets.html.twig" %} {% endblock %}
 
+
 {% block content %}
 
     {% include "dashboard/sidenav.html.twig" %}
@@ -10,6 +11,7 @@
     <div class="main-content">
 
         {% include "dashboard/topnav.html.twig" %}
+
         <!-- Header -->
         <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
 
@@ -23,13 +25,13 @@
                         <div class="card-header border-0">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <h3 class="mb-0 d-inline">Locations
+                                    <h3 class="mb-0 d-inline">Entities
                                         <i class="fa fa-spinner fa-spin" id="loading"></i>
                                     </h3>
                                 </div>
                                 <div class="col-4 text-right">
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                        Add Location
+                                        Add Entity
                                     </button>
                                 </div>
                             </div>
@@ -41,7 +43,7 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Add Location</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Add Entity</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -51,9 +53,9 @@
                                             <div class="form-group mb-3">
                                                 <div class="input-group input-group-alternative">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-world-2"></i></span>
+                                                        <span class="input-group-text"><i class="ni ni-laptop"></i></span>
                                                     </div>
-                                                    <input class="form-control" placeholder="Location Name" type="email">
+                                                    <input class="form-control" placeholder="Entity Name" type="email">
                                                 </div>
                                             </div>
                                             <div class="text-center">
@@ -71,9 +73,10 @@
                                 <thead class="thead-light">
                                 <tr>
                                     <th scope="col">ID</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Opened issues</th>
-                                    <th scope="col">Actions</th>
+                                    <th scope="col">Type of device</th>
+                                    <th scope="col">Location</th>
+                                    <th scope="col">Issues</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody id="replaceThis">
@@ -91,6 +94,6 @@
     </div>
 
     {% include "dashboard/javascripts.html.twig" %}
-    <script src="{{ asset('/js/users.js')}}"></script>
+    <script src="{{ asset('/js/entities.js')}}"></script>
 
 {% endblock %}

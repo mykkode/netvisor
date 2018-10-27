@@ -9,3 +9,8 @@ logout:
 register:
     path: /auth/register
     controller: App\Controller\AuthController::register
+
+check_credentials:
+    path: /auth/check-credentials
+    methods: POST
+    controller: App\Controller\AuthController::checkCredentials

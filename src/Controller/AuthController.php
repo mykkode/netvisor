@@ -42,7 +42,10 @@ class AuthController extends AbstractController
 
     }
 
-
+    public function register() : Response
+    {
+        return $this->render('auth/register.html.twig', []);
+    }
 
     public function index(): Response
     {

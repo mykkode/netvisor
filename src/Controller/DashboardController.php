@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Device;
+use App\Service\DatabaseService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -19,13 +22,24 @@ class DashboardController extends AbstractController
         return $this->render('dashboard/users.html.twig');
     }
 
-    public function devices(): Response
+    /**
+     * @param DatabaseService $databaseService
+     *
+     * @return Response
+     */
+    public function devices(DatabaseService $databaseService): Response
     {
-        return $this->render('dashboard/devices.html.twig');
+        return $this->render('dashboard/devices.html.twig', [
+            'devices' => $databaseService->findAll(Device::class),
+        ]);
     }
 
-    public function locations(): Response
+    public function locations(Request $request, DatabaseService $databaseService): Response
     {
+        $name = $request->get('name');
+        $device = new Device($name);
+        $databaseService->save($device);
+
         return $this->render('dashboard/locations.html.twig');
     }
 

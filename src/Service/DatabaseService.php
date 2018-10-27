@@ -84,4 +84,14 @@ class DatabaseService
     {
         return $this->doctrine->getRepository($entityName)->findOneBy($criteria);
     }
+
+    /**
+     * @param string $entityName
+     *
+     * @return array
+     */
+    public function findAll(string $entityName): array
+    {
+        return $this->doctrine->getRepository($entityName)->findAll();
+    }
 }

@@ -29,7 +29,7 @@ class Issue
     /**
      * @var Node
      * @ORM\ManyToOne(targetEntity="App\Entity\Node")
-     * @ORM\JoinColumn(name="node_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="node_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $node;
 

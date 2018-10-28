@@ -25,13 +25,13 @@
                         <div class="card-header border-0">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <h3 class="mb-0 d-inline">Entities
+                                    <h3 class="mb-0 d-inline">Nodes
                                         <i class="fa fa-spinner fa-spin" id="loading"></i>
                                     </h3>
                                 </div>
                                 <div class="col-4 text-right">
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                        Add Entity
+                                        Add Node
                                     </button>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Add Entity</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Add Node</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -55,7 +55,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text"><i class="ni ni-laptop"></i></span>
                                                     </div>
-                                                    <input class="form-control" placeholder="Entity Name" type="email">
+                                                    <input class="form-control" placeholder="Node name" type="email">
                                                 </div>
                                             </div>
                                             <div class="text-center">
@@ -94,6 +94,6 @@
     </div>
 
     {% include "dashboard/javascripts.html.twig" %}
-    <script src="{{ asset('/js/entities.js')}}"></script>
+    <script src="{{ asset('/js/nodes.js')}}"></script>
 
 {% endblock %}

@@ -18,9 +18,9 @@ opened_issues:
   path: /dashboard/opened_issues
   controller: App\Controller\DashboardController::opened_issues
 
-entities:
-  path: /dashboard/entities
-  controller: App\Controller\DashboardController::entities
+nodes:
+  path: /dashboard/nodes
+  controller: App\Controller\DashboardController::nodes
 
 insertDevice:
   path: /dashboard/devices/insertDevice

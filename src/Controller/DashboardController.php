@@ -8,10 +8,12 @@ use App\Entity\Location;
 use App\Entity\Node;
 use App\Entity\User;
 use App\Service\DatabaseService;
+use phpDocumentor\Reflection\Types\This;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface;
 
 /**
  * Class DashboardController.
@@ -60,11 +62,6 @@ class DashboardController extends AbstractController
         $id=$request->get('id');
 
         $device = $databaseService->find(Device::class, $id);
-
-//        $nodes = $databaseService->findBy(Node::class, ['device' => $device]);
-//        foreach ($nodes as $node) {
-//            $databaseService->delete($node);
-//        }
 
         $output=$databaseService->delete($device);
 
@@ -124,11 +121,6 @@ class DashboardController extends AbstractController
 
         $location = $databaseService->find(Location::class, $id);
 
-//        $nodes = $databaseService->findBy(Node::class, ['location' => $location]);
-//        foreach ($nodes as $node) {
-//            $databaseService->delete($node);
-//        }
-
         $output=$databaseService->delete($location);
 
         return $this->json($output);
@@ -171,5 +163,46 @@ class DashboardController extends AbstractController
         $issue = new Issue($node, $user);
 
         return $this->json(['error' => !$databaseService->save($issue)]);
+    }
+
+    /**
+     * @param DatabaseService $databaseService
+     *
+     * @return Response
+     */
+    public function getOpenIssues(DatabaseService $databaseService): Response
+    {
+        $openIssues = $databaseService->findBy(Issue::class, ['open' => true]);
+
+        return $this->json($openIssues);
+    }
+
+    /**
+     * @param Issue $issue
+     * @param DatabaseService $databaseService
+     * @param TokenStorageInterface $tokenStorage
+     *
+     * @return JsonResponse
+     */
+    public function assignIssue(Issue $issue, DatabaseService $databaseService, TokenStorageInterface $tokenStorage): JsonResponse
+    {
+        /** @var User $user */
+        $user = $tokenStorage->getToken()->getUser();
+        $issue->setAssignee($user);
+
+        return $this->json($databaseService->save($issue));
+    }
+
+    /**
+     * @param Issue $issue
+     * @param DatabaseService $databaseService
+     *
+     * @return JsonResponse
+     */
+    public function solveIssue(Issue $issue, DatabaseService $databaseService): JsonResponse
+    {
+        $issue->setOpen(false);
+
+        return $this->json($databaseService->save($issue));
     }
 }

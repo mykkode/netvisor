@@ -46,6 +46,7 @@ $(document).ready(function () {
                 $(".qr_code_button").click(function () {
                     var id=this.attributes[2].nodeValue;
 
+
                     var url="http://trifu-netvisor.eastus.cloudapp.azure.com/auth/add-issue/"+id;
                     makeCode(url);
                 });

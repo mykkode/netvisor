@@ -65,8 +65,9 @@ class AuthController extends AbstractController
         DatabaseService $databaseService
     ): JsonResponse
     {
-        $username = $request->get('username');
-        $password = $request->get('password');
+        $json = json_decode($request->getContent(), true);
+        $username = $json['username'] ?? null;
+        $password = $json['password'] ?? null;
 
         /** @var User $user */
         $user = $databaseService->findOneBy(User::class, ['username' => $username]);

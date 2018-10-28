@@ -3,9 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Device;
+use App\Entity\Issue;
 use App\Entity\Location;
+use App\Entity\Node;
+use App\Entity\User;
 use App\Service\DatabaseService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -38,12 +42,6 @@ class DashboardController extends AbstractController
     public function insertDevice(DatabaseService $databaseService, Request $request):Response
     {
         $name=$request->get('name');
-
-        $existingDevice = $databaseService->findOneBy(Device::class, ['name' => $name]);
-        if ($existingDevice instanceof Device) {
-            return $this->json(false);
-        }
-
         $device=new Device($name);
         $output=$databaseService->save($device);
 
@@ -70,17 +68,9 @@ class DashboardController extends AbstractController
 
     public function insertLocation(DatabaseService $databaseService, Request $request):Response
     {
-
         $name=$request->get('name');
-
-        $existingLocation = $databaseService->findOneBy(Location::class, ['name' => $name]);
-        if ($existingLocation instanceof Location) {
-            return $this->json(false);
-        }
-
-        $location = new Location($name);
-        $output = $databaseService->save($location);
-
+        $device=new Location($name);
+        $output=$databaseService->save($device);
 
         return $this->json($output);
     }
@@ -115,5 +105,22 @@ class DashboardController extends AbstractController
     public function entities(): Response
     {
         return $this->render('dashboard/entities.html.twig');
+    }
+
+    /**
+     * @param Node $node
+     * @param string $username
+     * @param DatabaseService $databaseService
+     *
+     * @return JsonResponse
+     */
+    public function addIssue(Node $node, string $username, DatabaseService $databaseService): JsonResponse
+    {
+        /** @var User $user */
+        $user = $databaseService->findOneBy(User::class, ['username' => $username]);
+
+        $issue = new Issue($node, $user);
+
+        return $this->json(['error' => !$databaseService->save($issue)]);
     }
 }

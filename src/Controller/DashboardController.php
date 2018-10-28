@@ -38,6 +38,12 @@ class DashboardController extends AbstractController
     public function insertDevice(DatabaseService $databaseService, Request $request):Response
     {
         $name=$request->get('name');
+
+        $existingDevice = $databaseService->findOneBy(Device::class, ['name' => $name]);
+        if ($existingDevice instanceof Device) {
+            return $this->json(false);
+        }
+
         $device=new Device($name);
         $output=$databaseService->save($device);
 
@@ -64,9 +70,17 @@ class DashboardController extends AbstractController
 
     public function insertLocation(DatabaseService $databaseService, Request $request):Response
     {
+
         $name=$request->get('name');
-        $device=new Location($name);
-        $output=$databaseService->save($device);
+
+        $existingLocation = $databaseService->findOneBy(Location::class, ['name' => $name]);
+        if ($existingLocation instanceof Location) {
+            return $this->json(false);
+        }
+
+        $location = new Location($name);
+        $output = $databaseService->save($location);
+
 
         return $this->json($output);
     }

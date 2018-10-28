@@ -5,6 +5,7 @@ $(document).ready(function () {
             type: "GET",
             url: '/dashboard/locations/getAllLocations',
             success: function(response) {
+                console.log(response);
                 var str='';
                 for(var i=0;i<response.length;i++) {
                     str=str+'<tr>' +

@@ -61,6 +61,26 @@ class DatabaseService
     }
 
     /**
+     * @param $entity
+     *
+     * @return bool
+     */
+    public function delete($entity)
+    {
+        /** @var EntityManager $em */
+        $em = $this->doctrine->getManager();
+
+        try  {
+            $em->remove($entity);
+            $em->flush($entity);
+        } catch (ORMException $exception) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
  * @param string $entityName
  * @param array $criteria
  * @param array|null $orderBy

@@ -54,12 +54,12 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text"><i class="ni ni-laptop"></i></span>
                                                     </div>
-                                                    <input class="form-control" placeholder="Device Name" type="email">
+                                                    <input id="DeviceName" class="form-control" placeholder="Device Name" type="email">
                                                 </div>
                                             </div>
                                             <div class="text-center">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary my-4">Add</button>
+                                                <button id="AddDevice" type="button" class="btn btn-primary my-4">Add</button>
                                             </div>
                                         </form>
                                     </div>
@@ -67,7 +67,6 @@
                             </div>
                         </div>
                         <div class="table-responsive">
-                            {{ dump(devices) }}
                             <!-- Projects table -->
                             <table class="table align-items-center table-flush">
                                 <thead class="thead-light">

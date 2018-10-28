@@ -21,3 +21,15 @@ opened_issues:
 entities:
   path: /dashboard/entities
   controller: App\Controller\DashboardController::entities
+
+insertDevice:
+  path: /dashboard/devices/insertDevice
+  controller: App\Controller\DashboardController::insertDevice
+
+getAllDevices:
+  path: /dashboard/devices/getAllDevices
+  controller: App\Controller\DashboardController::getAllDevices
+
+deleteDevice:
+  path: /dashboard/devices/deleteDevice
+  controller: App\Controller\DashboardController::deleteDevice

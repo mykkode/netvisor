@@ -34,12 +34,35 @@ class DashboardController extends AbstractController
         ]);
     }
 
-    public function locations(Request $request, DatabaseService $databaseService): Response
+    public function insertDevice(DatabaseService $databaseService, Request $request):Response
     {
-        $name = $request->get('name');
-        $device = new Device($name);
-        $databaseService->save($device);
+        $name=$request->get('name');
+        $device=new Device($name);
+        $output=$databaseService->save($device);
 
+        return $this->json($output);
+    }
+
+    public function deleteDevice(Request $request, DatabaseService $databaseService):Response
+    {
+        $id=$request->get('id');
+
+        $device = $databaseService->find(Device::class, $id);
+
+        $output=$databaseService->delete($device);
+
+        return $this->json($output);
+    }
+
+    public function getAllDevices(DatabaseService $databaseService):Response
+    {
+        $output=$databaseService->findAll(Device::class);
+
+        return $this->json($output);
+    }
+
+    public function locations(): Response
+    {
         return $this->render('dashboard/locations.html.twig');
     }
 

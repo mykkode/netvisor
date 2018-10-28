@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: trifu
- * Date: 28.10.2018
- * Time: 01:14
- */
 
 namespace App\Entity;
 
@@ -34,18 +28,12 @@ class Location
     private $name;
 
     /**
-     * @var Device[]|PersistentCollection|ArrayCollection
-     * @ORM\ManyToMany(targetEntity="App\Entity\Device", mappedBy="locations")
-     */
-    private $devices;
-
-    /**
      * Location constructor.
+     * @param string $name
      */
     public function __construct(string $name)
     {
         $this->name = $name;
-        $this->devices = new ArrayCollection();
     }
 
     /**
@@ -66,29 +54,13 @@ class Location
 
     /**
      * @param string $name
+     *
      * @return Location
      */
     public function setName(string $name): Location
     {
         $this->name = $name;
-        return $this;
-    }
 
-    /**
-     * @return PersistentCollection
-     */
-    public function getDevices()
-    {
-        return $this->devices;
-    }
-
-    /**
-     * @param ArrayCollection $devices
-     * @return Location
-     */
-    public function setDevices($devices): Location
-    {
-        $this->devices = $devices;
         return $this;
     }
 }

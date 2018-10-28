@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: trifu
- * Date: 28.10.2018
- * Time: 01:26
- */
 
 namespace App\Entity;
 
@@ -34,27 +28,12 @@ class Device
     private $name;
 
     /**
-     * @var Location[]|ArrayCollection|PersistentCollection
-     * @ORM\ManyToMany(targetEntity="App\Entity\Location", inversedBy="devices")
-     * @ORM\JoinTable(name="devices_locations")
-     */
-    private $locations;
-
-    /**
-     * @var string
-     * @ORM\Column(type="string")
-     */
-    private $qr_code;
-
-    /**
      * Device constructor.
      * @param string $name
      */
     public function __construct(string $name)
     {
         $this->name = $name;
-        $this->qr_code = 'ceva';
-        $this->locations = new ArrayCollection();
     }
 
 
@@ -77,49 +56,13 @@ class Device
 
     /**
      * @param string $name
+     *
      * @return Device
      */
     public function setName(string $name): Device
     {
         $this->name = $name;
+
         return $this;
     }
-
-    /**
-     * @return PersistentCollection
-     */
-    public function getLocations()
-    {
-        return $this->locations;
-    }
-
-    /**
-     * @param ArrayCollection $locations
-     * @return Device
-     */
-    public function setLocations(ArrayCollection $locations): Device
-    {
-        $this->locations = $locations;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getQrCode(): string
-    {
-        return $this->qr_code;
-    }
-
-    /**
-     * @param string $qr_code
-     * @return Device
-     */
-    public function setQrCode(string $qr_code): Device
-    {
-        $this->qr_code = $qr_code;
-        return $this;
-    }
-
-
 }

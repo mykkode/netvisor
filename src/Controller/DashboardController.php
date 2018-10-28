@@ -27,6 +27,13 @@ class DashboardController extends AbstractController
         return $this->render('dashboard/users.html.twig');
     }
 
+    public function getAllUsers(DatabaseService $databaseService):Response
+    {
+        $output=$databaseService->findAll(User::class);
+
+        return $this->json($output);
+    }
+
     /**
      * @param DatabaseService $databaseService
      *

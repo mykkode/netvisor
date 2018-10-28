@@ -6,6 +6,10 @@ users:
   path: /dashboard/users
   controller: App\Controller\DashboardController::users
 
+getAllUsers:
+  path: /dashboard/users/getAllUsers
+  controller: App\Controller\DashboardController::getAllUsers
+
 devices:
   path: /dashboard/devices
   controller: App\Controller\DashboardController::devices

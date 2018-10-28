@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Device;
+use App\Entity\Location;
 use App\Service\DatabaseService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -57,6 +58,33 @@ class DashboardController extends AbstractController
     public function getAllDevices(DatabaseService $databaseService):Response
     {
         $output=$databaseService->findAll(Device::class);
+
+        return $this->json($output);
+    }
+
+    public function insertLocation(DatabaseService $databaseService, Request $request):Response
+    {
+        $name=$request->get('name');
+        $device=new Location($name);
+        $output=$databaseService->save($device);
+
+        return $this->json($output);
+    }
+
+    public function deleteLocation(Request $request, DatabaseService $databaseService):Response
+    {
+        $id=$request->get('id');
+
+        $device = $databaseService->find(Location::class, $id);
+
+        $output=$databaseService->delete($device);
+
+        return $this->json($output);
+    }
+
+    public function getAllLocations(DatabaseService $databaseService):Response
+    {
+        $output=$databaseService->findAll(Location::class);
 
         return $this->json($output);
     }

@@ -33,3 +33,15 @@ getAllDevices:
 deleteDevice:
   path: /dashboard/devices/deleteDevice
   controller: App\Controller\DashboardController::deleteDevice
+
+insertLocation:
+  path: /dashboard/locations/insertLocation
+  controller: App\Controller\DashboardController::insertLocation
+
+getAllLocations:
+  path: /dashboard/locations/getAllLocations
+  controller: App\Controller\DashboardController::getAllLocations
+
+deleteLocation:
+  path: /dashboard/locations/deleteLocation
+  controller: App\Controller\DashboardController::deleteLocation

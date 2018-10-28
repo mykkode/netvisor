@@ -25,13 +25,13 @@
                         <div class="card-header border-0">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <h3 class="mb-0 d-inline">Entities
+                                    <h3 class="mb-0 d-inline">Nodes
                                         <i class="fa fa-spinner fa-spin" id="loading"></i>
                                     </h3>
                                 </div>
                                 <div class="col-4 text-right">
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                        Add Entity
+                                        Add Node
                                     </button>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Add Entity</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Add Node</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -55,14 +55,36 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text"><i class="ni ni-laptop"></i></span>
                                                     </div>
-                                                    <input class="form-control" placeholder="Entity Name" type="email">
+                                                    <input id="TypeNod" class="form-control" placeholder="Node name">
+                                                </div>
+                                                <div class="input-group input-group-alternative">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="ni ni-laptop"></i></span>
+                                                    </div>
+                                                    <input id="LocationNod" class="form-control" placeholder="Node name">
                                                 </div>
                                             </div>
                                             <div class="text-center">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary my-4">Add</button>
+                                                <button id="AddNode" type="button" class="btn btn-primary my-4">Add</button>
                                             </div>
                                         </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal QR -->
+                        <div class="modal fade" id="qrModal" tabindex="-1" role="dialog" aria-labelledby="qrModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">QR Code for your device:</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="qrcode" style="width:200px; height:200px; margin-top:15px;"></div>
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +97,6 @@
                                     <th scope="col">ID</th>
                                     <th scope="col">Type of device</th>
                                     <th scope="col">Location</th>
-                                    <th scope="col">Issues</th>
                                     <th scope="col">Action</th>
                                 </tr>
                                 </thead>
@@ -94,6 +115,7 @@
     </div>
 
     {% include "dashboard/javascripts.html.twig" %}
-    <script src="{{ asset('/js/entities.js')}}"></script>
 
+    <script src="{{ asset('/js/qrcode.js') }}"></script>
+    <script src="{{ asset('/js/nodes.js')}}"></script>
 {% endblock %}

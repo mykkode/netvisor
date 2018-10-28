@@ -64,8 +64,13 @@ class User implements UserInterface
      */
     private $roles;
 
-    public function __construct()
+    public function __construct($firstName,$lastName,$password,$email,$username)
     {
+        $this->firstName=$firstName;
+        $this->lastName=$lastName;
+        $this->password=$password;
+        $this->email=$email;
+        $this->username=$username;
         $this->roles = [self::ROLE_USER];
     }
 
@@ -138,9 +143,9 @@ class User implements UserInterface
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getPlainPassword(): string
+    public function getPlainPassword(): ?string
     {
         return $this->plainPassword;
     }

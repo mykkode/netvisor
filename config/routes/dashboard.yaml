@@ -6,6 +6,10 @@ users:
   path: /dashboard/users
   controller: App\Controller\DashboardController::users
 
+getAllUsers:
+  path: /dashboard/users/getAllUsers
+  controller: App\Controller\DashboardController::getAllUsers
+
 devices:
   path: /dashboard/devices
   controller: App\Controller\DashboardController::devices
@@ -18,9 +22,21 @@ opened_issues:
   path: /dashboard/opened_issues
   controller: App\Controller\DashboardController::opened_issues
 
-entities:
-  path: /dashboard/entities
-  controller: App\Controller\DashboardController::entities
+nodes:
+  path: /dashboard/nodes
+  controller: App\Controller\DashboardController::nodes
+
+addNod:
+  path: /dashboard/nodes/addNod
+  controller: App\Controller\DashboardController::addNod
+
+getAllNodes:
+  path: /dashboard/nodes/getAllNodes
+  controller: App\Controller\DashboardController::getAllNodes
+
+deleteNode:
+  path: /dashboard/nodes/deleteNode
+  controller: App\Controller\DashboardController::deleteNode
 
 insertDevice:
   path: /dashboard/devices/insertDevice
@@ -47,6 +63,6 @@ deleteLocation:
   controller: App\Controller\DashboardController::deleteLocation
 
 add_issue:
-    path: /dashboard/add-issue/{id}/{username}
+    path: /auth/add-issue/{id}/{username}
     controller: App\Controller\DashboardController:addIssue
 

@@ -49,7 +49,7 @@ class Issue
 
     /**
      * @var bool
-     * @ORM\Column(type="boolean", nullable=true)
+     * @ORM\Column(name="`open`",type="boolean", nullable=true)
      */
     private $open;
 

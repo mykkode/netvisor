@@ -6,7 +6,7 @@ $(document).ready(function () {
             type: "POST",
             url: '/dashboard/nodes/getAllNodes',
             success: function(response) {
-                console.log(response);
+
                 var str='';
                 for(var i=0;i<response.length;i++) {
                     str=str+'<tr>' +
@@ -14,9 +14,9 @@ $(document).ready(function () {
                         '<td>'+response[i].device.name+'</td>' +
                         '<td>'+response[i].location.name+'</td>' +
                         '<td><button type="button" class="btn btn-warning remove_location" data-id="'+response[i].id+'">X</button>' +
-                        '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#qrModal">\n' +
-                        '                                       Add Node\n' +
-                        '                                   </button>' +
+                            '<button type="button" class="btn btn-primary qr_code_button" data-id="'+response[i].id+'" data-toggle="modal" data-target="#qrModal">\n' +
+                            'QR Code\n' +
+                            '</button>' +
                         '</td>' +
                         '</tr>';
                 }
@@ -43,6 +43,12 @@ $(document).ready(function () {
                         }
                     });
                 });
+                $(".qr_code_button").click(function () {
+                    var id=this.attributes[2].nodeValue;
+
+                    var url="/auth/add-issue/"+id;
+                    makeCode(url);
+                });
             }
         });
     }
@@ -52,8 +58,7 @@ $(document).ready(function () {
 
         var type=$("#TypeNod")[0].value;
         var location=$("#LocationNod")[0].value;
-        console.log(type);
-        console.log(location);
+
         $.ajax({
             type: "POST",
             url: '/dashboard/nodes/addNod',
@@ -62,7 +67,6 @@ $(document).ready(function () {
                 nameLocation: location,
             },
             success: function(response) {
-                console.log(response);
                 populateTable();
             }
         });
@@ -71,9 +75,8 @@ $(document).ready(function () {
         width : 100,
         height : 100
     });
-    function makeCode () {
-        var elText = document.getElementById("text");
-        qrcode.makeCode("fdfsdf");
+    function makeCode (url) {
+        qrcode.makeCode(url);
     }
-    makeCode();
+
 });

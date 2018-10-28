@@ -22,15 +22,9 @@ opened_issues:
   path: /dashboard/opened_issues
   controller: App\Controller\DashboardController::opened_issues
 
-<<<<<<< HEAD
-entities:
-  path: /dashboard/entities
-  controller: App\Controller\DashboardController::entities
-=======
 nodes:
   path: /dashboard/nodes
   controller: App\Controller\DashboardController::nodes
->>>>>>> rad-dev
 
 insertDevice:
   path: /dashboard/devices/insertDevice
@@ -57,10 +51,6 @@ deleteLocation:
   controller: App\Controller\DashboardController::deleteLocation
 
 add_issue:
-<<<<<<< HEAD
     path: /auth/add-issue/{id}/{username}
-=======
-    path: /dashboard/add-issue/{id}/{username}
->>>>>>> rad-dev
     controller: App\Controller\DashboardController:addIssue
 

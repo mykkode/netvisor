@@ -29,7 +29,7 @@ class Issue
     /**
      * @var Node
      * @ORM\ManyToOne(targetEntity="App\Entity\Node")
-     * @ORM\JoinColumn(name="node_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="node_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $node;
 
@@ -48,6 +48,12 @@ class Issue
     private $assignee;
 
     /**
+     * @var bool
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $open;
+
+    /**
      * Issue constructor.
      * @param Node $node
      * @param User $reporter
@@ -57,6 +63,7 @@ class Issue
         $this->node = $node;
         $this->reporter = $reporter;
         $this->assignee = null;
+        $this->open = true;
     }
 
     /**
@@ -123,6 +130,26 @@ class Issue
     public function setAssignee(?User $assignee): Issue
     {
         $this->assignee = $assignee;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isOpen(): bool
+    {
+        return $this->open;
+    }
+
+    /**
+     * @param bool $open
+     *
+     * @return Issue
+     */
+    public function setOpen(bool $open): Issue
+    {
+        $this->open = $open;
+
         return $this;
     }
 }

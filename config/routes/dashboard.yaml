@@ -66,3 +66,15 @@ add_issue:
     path: /auth/add-issue/{id}/{username}
     controller: App\Controller\DashboardController:addIssue
 
+get_open_issues:
+    path: /dashboard/get-issues
+    controller: App\Controller\DashboardController:getOpenIssues
+
+
+assign_issue:
+    path: /dashboard/assign-issues/{id}
+    controller: App\Controller\DashboardController:assignIssue
+
+solve_issue:
+  path: /dashboard/solve-issues/{id}
+  controller: App\Controller\DashboardController:solveIssue

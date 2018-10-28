@@ -22,14 +22,14 @@ class Node
     /**
      * @var Device
      * @ORM\ManyToOne(targetEntity="App\Entity\Device")
-     * @ORM\JoinColumn(name="device_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="device_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $device;
 
     /**
      * @var Location
      * @ORM\ManyToOne(targetEntity="App\Entity\Location")
-     * @ORM\JoinColumn(name="location_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="location_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $location;
 

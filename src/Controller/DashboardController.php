@@ -82,6 +82,37 @@ class DashboardController extends AbstractController
         return $this->json($output);
     }
 
+    public function addNod(DatabaseService $databaseService, Request $request):Response
+    {
+        $nameDevice=$request->get('nameDevice');
+        $nameLocation=$request->get('nameLocation');
+        $location = $databaseService->findOneBy(Location::class, ['name' => $nameLocation]);
+        $device = $databaseService->findOneBy(Device::class, ['name' => $nameDevice]);
+        $node=new Node($device,$location);
+
+        $output=$databaseService->save($node);
+
+        return $this->json($output);
+    }
+
+    public function getAllNodes(DatabaseService $databaseService):Response
+    {
+        $output=$databaseService->findAll(Node::class);
+
+        return $this->json($output);
+    }
+
+    public function deleteNode(Request $request, DatabaseService $databaseService):Response
+    {
+        $id=$request->get('id');
+
+        $node = $databaseService->find(Node::class, $id);
+
+        $output=$databaseService->delete($node);
+
+        return $this->json($output);
+    }
+
     public function deleteLocation(Request $request, DatabaseService $databaseService):Response
     {
         $id=$request->get('id');

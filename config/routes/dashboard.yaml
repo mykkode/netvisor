@@ -26,6 +26,18 @@ nodes:
   path: /dashboard/nodes
   controller: App\Controller\DashboardController::nodes
 
+addNod:
+  path: /dashboard/nodes/addNod
+  controller: App\Controller\DashboardController::addNod
+
+getAllNodes:
+  path: /dashboard/nodes/getAllNodes
+  controller: App\Controller\DashboardController::getAllNodes
+
+deleteNode:
+  path: /dashboard/nodes/deleteNode
+  controller: App\Controller\DashboardController::deleteNode
+
 insertDevice:
   path: /dashboard/devices/insertDevice
   controller: App\Controller\DashboardController::insertDevice

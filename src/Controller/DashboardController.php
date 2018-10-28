@@ -54,6 +54,11 @@ class DashboardController extends AbstractController
 
         $device = $databaseService->find(Device::class, $id);
 
+        $nodes = $databaseService->findBy(Node::class, ['device' => $device]);
+        foreach ($nodes as $node) {
+            $databaseService->delete($node);
+        }
+
         $output=$databaseService->delete($device);
 
         return $this->json($output);
@@ -79,9 +84,14 @@ class DashboardController extends AbstractController
     {
         $id=$request->get('id');
 
-        $device = $databaseService->find(Location::class, $id);
+        $location = $databaseService->find(Location::class, $id);
 
-        $output=$databaseService->delete($device);
+        $nodes = $databaseService->findBy(Node::class, ['location' => $location]);
+        foreach ($nodes as $node) {
+            $databaseService->delete($node);
+        }
+
+        $output=$databaseService->delete($location);
 
         return $this->json($output);
     }

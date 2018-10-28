@@ -51,31 +51,33 @@
             </ul>
             <!-- Divider -->
             <hr class="my-3">
-            <!-- Heading -->
-            <h6 class="navbar-heading text-muted">Management</h6>
-            <!-- Navigation -->
-            <ul class="navbar-nav mb-md-3">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('users') }}">
-                        <i class="ni ni-circle-08"></i> Users
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('locations') }}">
-                        <i class="ni ni-world"></i> Locations
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('devices') }}">
-                        <i class="ni ni-ui-04"></i> Devices
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('nodes') }}">
-                        <i class="ni ni-atom"></i> Nodes
-                    </a>
-                </li>
-            </ul>
+            {% if is_granted('ROLE_ADMIN') %}
+                <!-- Heading -->
+                <h6 class="navbar-heading text-muted">Management</h6>
+                <!-- Navigation -->
+                <ul class="navbar-nav mb-md-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('users') }}">
+                            <i class="ni ni-circle-08"></i> Users
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('locations') }}">
+                            <i class="ni ni-world"></i> Locations
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('devices') }}">
+                            <i class="ni ni-ui-04"></i> Devices
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('nodes') }}">
+                            <i class="ni ni-atom"></i> Nodes
+                        </a>
+                    </li>
+                </ul>
+            {% endif %}
         </div>
     </div>
 </nav>

@@ -52,12 +52,13 @@ class CreateSuperUserCommand extends Command
     public function execute(InputInterface $input, OutputInterface $output): void
     {
         /** @var User $user */
-        $user = (new User())
-            ->setUsername('andru')
-            ->setFirstName('Andru-Octavian')
-            ->setLastName('Mocanu')
-            ->setEmail('andru.mao@ymail.com')
-            ->setPlainPassword('parolaandru');
+        $user = (new User('admin','admin','admin','admin.admin@admin.com','admin'))
+            ->setUsername('admin')
+            ->setFirstName('Admin')
+            ->setLastName('Adminescu')
+            ->setEmail('admin.admin@admin.com')
+            ->setPlainPassword('admin')
+            ->setRoles([User::ROLE_ADMIN]);
         $user->setPassword($this->userPasswordEncoder->encodePassword($user, $user->getPlainPassword()));
 
         $this->databaseService->save($user);

@@ -2,7 +2,7 @@ $(document).ready(function () {
     function populateTable(){
         $('#loading').css({"display":""});
         $.ajax({
-            type: "GET",
+            type: "POST",
             url: '/dashboard/locations/getAllLocations',
             success: function(response) {
                 console.log(response);

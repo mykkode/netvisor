@@ -47,6 +47,6 @@ deleteLocation:
   controller: App\Controller\DashboardController::deleteLocation
 
 add_issue:
-    path: /dashboard/add-issue/{id}/{username}
+    path: /auth/add-issue/{id}/{username}
     controller: App\Controller\DashboardController:addIssue
 
